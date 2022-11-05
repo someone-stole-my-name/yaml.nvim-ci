@@ -34,7 +34,7 @@ push: setup-buildx
 	docker buildx build \
 		--platform $(IMAGE_PLATFORMS) \
 		-t $(IMAGE_NAME):latest . --push
-	if git describe --exact-match; then	\
+	if git describe --exact-match --all; then	\
 			docker buildx build \
 				--platform $(IMAGE_PLATFORMS) \
 				-t $(IMAGE_NAME):$(shell git describe --tags --abbrev=0) . --push; \
