@@ -1,6 +1,8 @@
 PROJECT = yaml.nvim-ci
 IMAGE_NAME := ghcr.io/someone-stole-my-name/$(PROJECT)
 IMAGE_PLATFORMS := linux/amd64
+# For some reason linux/arm64 OOMs
+# IMAGE_PLATFORMS := linux/amd64,linux/arm64
 
 define DOCKER_DEPS
 	binfmt-support \
