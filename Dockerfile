@@ -6,6 +6,7 @@ RUN apk --no-cache add \
     perl \
     perl-json-xs \
     perl-lwp-protocol-https \
+    python3 \
     rust
 
 RUN npm install -g yaml-language-server
@@ -13,5 +14,6 @@ RUN npm install -g yaml-language-server
 RUN cargo install stylua
 
 ENV PATH "$PATH:/root/.cargo/bin"
+ENV SHELL "ash"
 
 WORKDIR /
