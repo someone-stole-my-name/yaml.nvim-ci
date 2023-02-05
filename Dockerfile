@@ -1,13 +1,15 @@
 FROM ghcr.io/someone-stole-my-name/docker-nvim:0.8.0
 
 RUN apk --no-cache add \
+    bash \
     npm \
     perl \
     perl-json-xs \
     perl-lwp-protocol-https \
     python3 \
     stylua \
-    wget
+    wget \
+    yaml-dev
 
 # install the same version that packer would
 RUN wget -nv https://raw.githubusercontent.com/luarocks/hererocks/latest/hererocks.py && \
